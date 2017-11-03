@@ -7,3 +7,9 @@ c:\users\denise\documents\visual studio 2015\Projects\AudioInput\AudioInput\obj\
 C:\Users\Denise\Desktop\AudioInput\AudioInput\bin\Debug\AudioInput.exe.config
 C:\Users\Denise\Desktop\AudioInput\AudioInput\obj\Debug\AudioInput.exe
 C:\Users\Denise\Desktop\AudioInput\AudioInput\obj\Debug\AudioInput.pdb
+C:\Users\Anja\Documents\Studium\Interaktive_Umgebung\AudioTest\AudioInput\AudioInput\bin\Debug\AudioInput.exe.config
+C:\Users\Anja\Documents\Studium\Interaktive_Umgebung\AudioTest\AudioInput\AudioInput\obj\Debug\AudioInput.exe
+C:\Users\Anja\Documents\Studium\Interaktive_Umgebung\AudioTest\AudioInput\AudioInput\obj\Debug\AudioInput.pdb
+C:\Users\Anja\Documents\Studium\Interaktive_Umgebung\AudioTest\AudioInput\AudioInput\bin\Debug\AudioInput.exe
+C:\Users\Anja\Documents\Studium\Interaktive_Umgebung\AudioTest\AudioInput\AudioInput\bin\Debug\AudioInput.pdb
+C:\Users\Anja\Documents\Studium\Interaktive_Umgebung\AudioTest\AudioInput\AudioInput\obj\Debug\AudioInput.csprojResolveAssemblyReference.cache
