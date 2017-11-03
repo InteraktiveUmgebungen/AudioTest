@@ -1,0 +1,9 @@
+c:\users\denise\documents\visual studio 2015\Projects\AudioInput\AudioInput\bin\Debug\AudioInput.exe.config
+c:\users\denise\documents\visual studio 2015\Projects\AudioInput\AudioInput\bin\Debug\AudioInput.exe
+c:\users\denise\documents\visual studio 2015\Projects\AudioInput\AudioInput\bin\Debug\AudioInput.pdb
+c:\users\denise\documents\visual studio 2015\Projects\AudioInput\AudioInput\bin\Debug\Microsoft.Speech.dll
+c:\users\denise\documents\visual studio 2015\Projects\AudioInput\AudioInput\obj\Debug\AudioInput.exe
+c:\users\denise\documents\visual studio 2015\Projects\AudioInput\AudioInput\obj\Debug\AudioInput.pdb
+C:\Users\Denise\Desktop\AudioInput\AudioInput\bin\Debug\AudioInput.exe.config
+C:\Users\Denise\Desktop\AudioInput\AudioInput\obj\Debug\AudioInput.exe
+C:\Users\Denise\Desktop\AudioInput\AudioInput\obj\Debug\AudioInput.pdb
