@@ -1,6 +1,12 @@
-#pragma once
+﻿#pragma once
 
 #include "ofMain.h"
+#include "word.h"
+#include "MSAPhysics2D.h"
+#include "keyLocation.h"
+
+
+using namespace msa::physics;
 
 class ofApp : public ofBaseApp{
 
@@ -21,4 +27,20 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 		
+
+		ofTrueTypeFont myFont;
+		set <Word> words;
+		set <string> strings;
+		int padding = 20;
+		int windowPadding = 40;
+
+		void initScene();
+
+		int width;
+		int height;
+		World2D_ptr world;
+
+		string codeWord;
+		vector<string> keys;
+		vector<keyLocation> keysFound;
 };
