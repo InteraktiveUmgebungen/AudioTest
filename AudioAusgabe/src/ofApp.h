@@ -4,9 +4,12 @@
 #include "word.h"
 #include "MSAPhysics2D.h"
 #include "keyLocation.h"
-
+#include "ofxOsc.h"
 
 using namespace msa::physics;
+
+// listen on port 55555
+#define PORT 55555
 
 class ofApp : public ofBaseApp{
 
@@ -43,4 +46,8 @@ class ofApp : public ofBaseApp{
 		string codeWord;
 		vector<string> keys;
 		vector<keyLocation> keysFound;
+
+		// for OSC connection to input
+		ofxOscReceiver receiver;
+
 };

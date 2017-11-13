@@ -20,3 +20,5 @@ C:\Users\Denise\Documents\ofx-workspace\of_v0.9.8_vs_release\apps\myApps\Reposit
 C:\Users\Denise\Documents\ofx-workspace\of_v0.9.8_vs_release\apps\myApps\Repository\AudioTest\AudioInput\AudioInput\bin\Debug\AudioInput.pdb
 C:\Users\Denise\Documents\ofx-workspace\of_v0.9.8_vs_release\apps\myApps\Repository\AudioTest\AudioInput\AudioInput\bin\Debug\Microsoft.Speech.dll
 C:\Users\Denise\Documents\ofx-workspace\of_v0.9.8_vs_release\apps\myApps\Repository\AudioTest\AudioInput\AudioInput\obj\Debug\AudioInput.csprojResolveAssemblyReference.cache
+C:\Users\Denise\Documents\ofx-workspace\of_v0.9.8_vs_release\apps\myApps\Repository\AudioTest\AudioInput\AudioInput\bin\Debug\SharpOSC.dll
+C:\Users\Denise\Documents\ofx-workspace\of_v0.9.8_vs_release\apps\myApps\Repository\AudioTest\AudioInput\AudioInput\bin\Debug\SharpOSC.pdb

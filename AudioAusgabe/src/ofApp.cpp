@@ -1,7 +1,6 @@
 ﻿#include "ofApp.h"
 #include "word.h"
 #include <random>
-#include "MSAPhysics2D.h"
 #include "keyLocation.h"
 
 
@@ -25,6 +24,9 @@ void ofApp::setup(){
 	for (int i = 0; i < codeWord.length(); i++) {
 		keys.push_back(codeWord.substr(i, 1));
 	}
+
+	// for OSC connection with input
+	receiver.setup(PORT);
 }
 
 //--------------------------------------------------------------
@@ -34,6 +36,15 @@ void ofApp::update(){
 
 	// update the world
 	world->update();
+
+
+	// read OSC messages from input
+	while (receiver.hasWaitingMessages()) {
+		ofxOscMessage msg;
+		receiver.getNextMessage(msg);
+
+		cout << "New message: " << msg.getArgAsString(0) << endl;
+	}
 
 
 	// read osc input --> TODO connect to audioInput project
@@ -105,10 +116,10 @@ void ofApp::update(){
 
 
 
-	// print out words on console
-	for (const Word &word : words) {
+	// print out all words on console
+	/*for (const Word &word : words) {
 		cout << word <<endl;
-	}
+	}*/
 
 	// schlüsselwort definieren, nötige buchstaben aus strings von input raussuchen
 	// für jedes wort ein rechteck und einen string generieren --> string aufteilen in normalen und hervorgehobenen teil
