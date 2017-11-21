@@ -1,0 +1,11 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (obj\Debug\) contains files shared from another project (AudioAusgabe.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  ofApp.cpp
+src\ofApp.cpp(51): warning C4474: 'printf' : too many arguments passed for format string
+  src\ofApp.cpp(51): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+src\ofApp.cpp(52): warning C4474: 'printf' : too many arguments passed for format string
+  src\ofApp.cpp(52): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+     Creating library bin\AudioAusgabe__debug.lib and object bin\AudioAusgabe__debug.exp
+  AudioAusgabe_.vcxproj -> C:\Users\Anja\Documents\Studium\of_v0.9.8_vs_release\apps\myApps\Respository\AudioTest\AudioAusgabe_\bin\AudioAusgabe__debug.exe
+  AudioAusgabe_.vcxproj -> bin\AudioAusgabe__debug.pdb (Full PDB)
+  
+  	                   9	C:\Users\Anja\Documents\Studium\of_v0.9.8_vs_release\export\vs\Win32\

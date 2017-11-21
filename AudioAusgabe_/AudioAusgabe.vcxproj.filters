@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\ofApp.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ofApp.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\word.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\addons\ofxMSACore\src\MSACoreGL.cpp">
+      <Filter>addons\ofxMSACore\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\keyLocation.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{d8376475-7454-4a24-b08a-aac121d3ad6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons">
+      <UniqueIdentifier>{71834F65-F3A9-211E-73B8-DC85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxMSACore">
+      <UniqueIdentifier>{731EF7F9-8F49-031C-EEDF-FC0D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxMSACore\src">
+      <UniqueIdentifier>{ADA31002-61E1-E44B-8B38-C509}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxMSAPhysics">
+      <UniqueIdentifier>{ED661F95-F00D-AE04-F1A2-F841}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxMSAPhysics\src">
+      <UniqueIdentifier>{06B72E8B-5168-487B-EABE-B3FE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxMSAPhysics\src\obselete">
+      <UniqueIdentifier>{AFDAF6C1-DC8C-E956-CD2B-04E5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ofApp.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ofApp.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\word.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\addons\ofxMSACore\src\MSACore-Cinder.h">
+      <Filter>addons\ofxMSACore\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\addons\ofxMSACore\src\MSACore-OF.h">
+      <Filter>addons\ofxMSACore\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\addons\ofxMSACore\src\MSACore.h">
+      <Filter>addons\ofxMSACore\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\addons\ofxMSACore\src\MSACoreCommon.h">
+      <Filter>addons\ofxMSACore\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\addons\ofxMSACore\src\MSACoreGL.h">
+      <Filter>addons\ofxMSACore\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\addons\ofxMSACore\src\MSACoreMath.h">
+      <Filter>addons\ofxMSACore\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\addons\ofxMSAPhysics\src\MSAPhysics.h">
+      <Filter>addons\ofxMSAPhysics\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\addons\ofxMSAPhysics\src\MSAPhysics2D.h">
+      <Filter>addons\ofxMSAPhysics\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\addons\ofxMSAPhysics\src\MSAPhysics3D.h">
+      <Filter>addons\ofxMSAPhysics\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\addons\ofxMSAPhysics\src\MSAPhysicsAttraction.h">
+      <Filter>addons\ofxMSAPhysics\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\addons\ofxMSAPhysics\src\MSAPhysicsConstraint.h">
+      <Filter>addons\ofxMSAPhysics\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\addons\ofxMSAPhysics\src\MSAPhysicsParams.h">
+      <Filter>addons\ofxMSAPhysics\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\addons\ofxMSAPhysics\src\MSAPhysicsParticle.h">
+      <Filter>addons\ofxMSAPhysics\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\addons\ofxMSAPhysics\src\MSAPhysicsSector.h">
+      <Filter>addons\ofxMSAPhysics\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\addons\ofxMSAPhysics\src\MSAPhysicsSpring.h">
+      <Filter>addons\ofxMSAPhysics\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\addons\ofxMSAPhysics\src\MSAPhysicsTypes.h">
+      <Filter>addons\ofxMSAPhysics\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\addons\ofxMSAPhysics\src\MSAPhysicsWorld.h">
+      <Filter>addons\ofxMSAPhysics\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\addons\ofxMSAPhysics\src\obselete\MSAPhysicsCallbacks.h">
+      <Filter>addons\ofxMSAPhysics\src\obselete</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\addons\ofxMSAPhysics\src\obselete\MSAPhysicsDataRecorder.h">
+      <Filter>addons\ofxMSAPhysics\src\obselete</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\addons\ofxMSAPhysics\src\obselete\MSAPhysicsParticleDrawer.h">
+      <Filter>addons\ofxMSAPhysics\src\obselete</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\addons\ofxMSAPhysics\src\obselete\MSAPhysicsParticleUpdater.h">
+      <Filter>addons\ofxMSAPhysics\src\obselete</Filter>
+    </ClInclude>
+    <ClInclude Include="src\keyLocation.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="icon.rc" />
+  </ItemGroup>
+</Project>

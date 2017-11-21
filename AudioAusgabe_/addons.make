@@ -1,0 +1,3 @@
+ofxMSACore
+ofxMSAPhysics
+ofxOsc
