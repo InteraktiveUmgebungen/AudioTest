@@ -1,12 +1,9 @@
 ﻿#pragma once
-
 #include "ofMain.h"
 #include "word.h"
-#include "MSAPhysics2D.h"
-#include "keyLocation.h"
 #include "ofxOsc.h"
-
-using namespace msa::physics;
+#include "ofxBox2d.h"
+#include "bubble.h"
 
 // listen on port 55555
 #define PORT 55555
@@ -30,24 +27,22 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 		
-
-		ofTrueTypeFont myFont;
+		// for text processing
 		set <Word> words;
-		set <string> strings;
-		int padding = 20;
-		int windowPadding = 40;
+		std::set<std::string> wordsAsStrings;
+		std::set<std::string> correctWords;
+		bool checkIfOnlyCharacters(string wort);
 
-		void initScene();
+		set<string> codeWord;
+		set<string> codeBuchstaben;
 
-		int width;
-		int height;
-		World2D_ptr world;
-
-		string codeWord;
-		vector<string> keys;
-		vector<keyLocation> keysFound;
+		// for visual output
+		ofTrueTypeFont myFont;
+		ofxBox2d box2d;
+		vector <shared_ptr<Bubble>> allBubbles;
+		ofTrueTypeFont myFontText;
+		ofTrueTypeFont myFontBuchstabe;
 
 		// for OSC connection to input
 		ofxOscReceiver receiver;
-
 };

@@ -8,53 +8,24 @@
 		text = s;
 	}
 
-	Word::Word(string s, ofRectangle rect) {
-		text = s;
-		background = rect;
-	}
-
-	// preferred ctor
-	Word::Word(string s, vector<string> sp, ofRectangle rect, int width, int height) {
-		text = s;
-		stringParts = sp;
-		background = rect;
-		textWidth = width;
-		textHeight = height;
+	Word::Word(string wort, string b) {
+		text = wort;
+		buchstabe = b;
 	}
 
 	Word::~Word() {	}
 
 // methods
 //---------------------------------------------------------------------
-	ofRectangle Word::getBackground() const {
-		return background;
-	}
-	void Word::setBackground(ofRectangle rect) {
-		background = rect;
-	}
-
+	
 	string Word::getText() const {
 		return text;
 	}
 
-	vector<string> Word::getStringParts() const {
-		return stringParts;
+	string Word::getBuchstabe() const {
+		return buchstabe;
 	}
 
-	int Word::getTextWidth() {
-		return textWidth;
-	}
-
-	void Word::setTextWidth(int w) {
-		textWidth = w;
-	}
-
-	int Word::getTextHeight() const {
-		return textHeight;
-	}
-	void Word::setTextHeight(int h) {
-		textHeight = h;
-	}
 
 
 // overloaded operators
