@@ -21,7 +21,7 @@
 	<PropertyGroup Label="Globals">
 		<ProjectGuid>{7FD42DF7-442E-479A-BA76-D0022F99702A}</ProjectGuid>
 		<Keyword>Win32Proj</Keyword>
-		<RootNamespace>AudioAusgabe_</RootNamespace>
+		<RootNamespace>box2DTest</RootNamespace>
 	</PropertyGroup>
 	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -95,7 +95,7 @@
 			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
 			<RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
 			<WarningLevel>Level3</WarningLevel>
-			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\..\..\addons\ofxBox2d\libs;..\..\..\..\..\addons\ofxBox2d\libs\Box2D;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Collision;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Collision\Shapes;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Common;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Contacts;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Joints;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Rope;..\..\..\..\..\addons\ofxBox2d\libs\triangle;..\..\..\..\..\addons\ofxBox2d\src;..\..\..\..\..\addons\ofxOsc\libs;..\..\..\..\..\addons\ofxOsc\libs\oscpack;..\..\..\..\..\addons\ofxOsc\libs\oscpack\src;..\..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip;..\..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip\posix;..\..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip\win32;..\..\..\..\..\addons\ofxOsc\libs\oscpack\src\osc;..\..\..\..\..\addons\ofxOsc\src</AdditionalIncludeDirectories>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\..\..\addons\ofxBox2d\libs;..\..\..\..\..\addons\ofxBox2d\libs\Box2D;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Collision;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Collision\Shapes;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Common;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Contacts;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Joints;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Rope;..\..\..\..\..\addons\ofxBox2d\libs\triangle;..\..\..\..\..\addons\ofxBox2d\src</AdditionalIncludeDirectories>
 			<CompileAs>CompileAsCpp</CompileAs>
 		</ClCompile>
 		<Link>
@@ -114,7 +114,7 @@
 			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
 			<RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
 			<WarningLevel>Level3</WarningLevel>
-			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\..\..\addons\ofxBox2d\libs;..\..\..\..\..\addons\ofxBox2d\libs\Box2D;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Collision;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Collision\Shapes;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Common;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Contacts;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Joints;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Rope;..\..\..\..\..\addons\ofxBox2d\libs\triangle;..\..\..\..\..\addons\ofxBox2d\src;..\..\..\..\..\addons\ofxOsc\libs;..\..\..\..\..\addons\ofxOsc\libs\oscpack;..\..\..\..\..\addons\ofxOsc\libs\oscpack\src;..\..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip;..\..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip\posix;..\..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip\win32;..\..\..\..\..\addons\ofxOsc\libs\oscpack\src\osc;..\..\..\..\..\addons\ofxOsc\src</AdditionalIncludeDirectories>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\..\..\addons\ofxBox2d\libs;..\..\..\..\..\addons\ofxBox2d\libs\Box2D;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Collision;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Collision\Shapes;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Common;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Contacts;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Joints;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Rope;..\..\..\..\..\addons\ofxBox2d\libs\triangle;..\..\..\..\..\addons\ofxBox2d\src</AdditionalIncludeDirectories>
 			<CompileAs>CompileAsCpp</CompileAs>
 			<MultiProcessorCompilation>true</MultiProcessorCompilation>
 		</ClCompile>
@@ -133,7 +133,7 @@
 			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
 			<RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
 			<WarningLevel>Level3</WarningLevel>
-			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\..\..\addons\ofxBox2d\libs;..\..\..\..\..\addons\ofxBox2d\libs\Box2D;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Collision;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Collision\Shapes;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Common;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Contacts;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Joints;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Rope;..\..\..\..\..\addons\ofxBox2d\libs\triangle;..\..\..\..\..\addons\ofxBox2d\src;..\..\..\..\..\addons\ofxOsc\libs;..\..\..\..\..\addons\ofxOsc\libs\oscpack;..\..\..\..\..\addons\ofxOsc\libs\oscpack\src;..\..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip;..\..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip\posix;..\..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip\win32;..\..\..\..\..\addons\ofxOsc\libs\oscpack\src\osc;..\..\..\..\..\addons\ofxOsc\src</AdditionalIncludeDirectories>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\..\..\addons\ofxBox2d\libs;..\..\..\..\..\addons\ofxBox2d\libs\Box2D;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Collision;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Collision\Shapes;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Common;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Contacts;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Joints;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Rope;..\..\..\..\..\addons\ofxBox2d\libs\triangle;..\..\..\..\..\addons\ofxBox2d\src</AdditionalIncludeDirectories>
 			<CompileAs>CompileAsCpp</CompileAs>
 			<MultiProcessorCompilation>true</MultiProcessorCompilation>
 		</ClCompile>
@@ -155,7 +155,7 @@
 			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
 			<RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
 			<WarningLevel>Level3</WarningLevel>
-			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\..\..\addons\ofxBox2d\libs;..\..\..\..\..\addons\ofxBox2d\libs\Box2D;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Collision;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Collision\Shapes;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Common;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Contacts;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Joints;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Rope;..\..\..\..\..\addons\ofxBox2d\libs\triangle;..\..\..\..\..\addons\ofxBox2d\src;..\..\..\..\..\addons\ofxOsc\libs;..\..\..\..\..\addons\ofxOsc\libs\oscpack;..\..\..\..\..\addons\ofxOsc\libs\oscpack\src;..\..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip;..\..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip\posix;..\..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip\win32;..\..\..\..\..\addons\ofxOsc\libs\oscpack\src\osc;..\..\..\..\..\addons\ofxOsc\src</AdditionalIncludeDirectories>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\..\..\addons\ofxBox2d\libs;..\..\..\..\..\addons\ofxBox2d\libs\Box2D;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Collision;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Collision\Shapes;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Common;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Contacts;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Joints;..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Rope;..\..\..\..\..\addons\ofxBox2d\libs\triangle;..\..\..\..\..\addons\ofxBox2d\src</AdditionalIncludeDirectories>
 			<CompileAs>CompileAsCpp</CompileAs>
 		</ClCompile>
 		<Link>
@@ -173,7 +173,6 @@
 	<ItemGroup>
 		<ClCompile Include="src\main.cpp" />
 		<ClCompile Include="src\ofApp.cpp" />
-		<ClCompile Include="src\word.cpp" />
 		<ClCompile Include="..\..\..\..\..\addons\ofxBox2d\src\ofxBox2d.cpp" />
 		<ClCompile Include="..\..\..\..\..\addons\ofxBox2d\src\ofxBox2dBaseShape.cpp" />
 		<ClCompile Include="..\..\..\..\..\addons\ofxBox2d\src\ofxBox2dCircle.cpp" />
@@ -229,23 +228,9 @@
 		<ClCompile Include="..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Dynamics\Joints\b2WheelJoint.cpp" />
 		<ClCompile Include="..\..\..\..\..\addons\ofxBox2d\libs\Box2D\Rope\b2Rope.cpp" />
 		<ClCompile Include="..\..\..\..\..\addons\ofxBox2d\libs\triangle\del_impl.cpp" />
-		<ClCompile Include="..\..\..\..\..\addons\ofxOsc\src\ofxOscBundle.cpp" />
-		<ClCompile Include="..\..\..\..\..\addons\ofxOsc\src\ofxOscMessage.cpp" />
-		<ClCompile Include="..\..\..\..\..\addons\ofxOsc\src\ofxOscParameterSync.cpp" />
-		<ClCompile Include="..\..\..\..\..\addons\ofxOsc\src\ofxOscReceiver.cpp" />
-		<ClCompile Include="..\..\..\..\..\addons\ofxOsc\src\ofxOscSender.cpp" />
-		<ClCompile Include="..\..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip\IpEndpointName.cpp" />
-		<ClCompile Include="..\..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip\win32\NetworkingUtils.cpp" />
-		<ClCompile Include="..\..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip\win32\UdpSocket.cpp" />
-		<ClCompile Include="..\..\..\..\..\addons\ofxOsc\libs\oscpack\src\osc\OscOutboundPacketStream.cpp" />
-		<ClCompile Include="..\..\..\..\..\addons\ofxOsc\libs\oscpack\src\osc\OscPrintReceivedElements.cpp" />
-		<ClCompile Include="..\..\..\..\..\addons\ofxOsc\libs\oscpack\src\osc\OscReceivedElements.cpp" />
-		<ClCompile Include="..\..\..\..\..\addons\ofxOsc\libs\oscpack\src\osc\OscTypes.cpp" />
 	</ItemGroup>
 	<ItemGroup>
 		<ClInclude Include="src\ofApp.h" />
-		<ClInclude Include="src\keyLocation.h" />
-		<ClInclude Include="src\word.h" />
 		<ClInclude Include="..\..\..\..\..\addons\ofxBox2d\src\ofxBox2d.h" />
 		<ClInclude Include="..\..\..\..\..\addons\ofxBox2d\src\ofxBox2dBaseShape.h" />
 		<ClInclude Include="..\..\..\..\..\addons\ofxBox2d\src\ofxBox2dCircle.h" />
@@ -310,26 +295,6 @@
 		<ClInclude Include="..\..\..\..\..\addons\ofxBox2d\libs\triangle\dpoint.hpp" />
 		<ClInclude Include="..\..\..\..\..\addons\ofxBox2d\libs\triangle\triangle.h" />
 		<ClInclude Include="..\..\..\..\..\addons\ofxBox2d\libs\triangle\triangle_impl.hpp" />
-		<ClInclude Include="..\..\..\..\..\addons\ofxOsc\src\ofxOsc.h" />
-		<ClInclude Include="..\..\..\..\..\addons\ofxOsc\src\ofxOscArg.h" />
-		<ClInclude Include="..\..\..\..\..\addons\ofxOsc\src\ofxOscBundle.h" />
-		<ClInclude Include="..\..\..\..\..\addons\ofxOsc\src\ofxOscMessage.h" />
-		<ClInclude Include="..\..\..\..\..\addons\ofxOsc\src\ofxOscParameterSync.h" />
-		<ClInclude Include="..\..\..\..\..\addons\ofxOsc\src\ofxOscReceiver.h" />
-		<ClInclude Include="..\..\..\..\..\addons\ofxOsc\src\ofxOscSender.h" />
-		<ClInclude Include="..\..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip\IpEndpointName.h" />
-		<ClInclude Include="..\..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip\NetworkingUtils.h" />
-		<ClInclude Include="..\..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip\PacketListener.h" />
-		<ClInclude Include="..\..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip\TimerListener.h" />
-		<ClInclude Include="..\..\..\..\..\addons\ofxOsc\libs\oscpack\src\ip\UdpSocket.h" />
-		<ClInclude Include="..\..\..\..\..\addons\ofxOsc\libs\oscpack\src\osc\MessageMappingOscPacketListener.h" />
-		<ClInclude Include="..\..\..\..\..\addons\ofxOsc\libs\oscpack\src\osc\OscException.h" />
-		<ClInclude Include="..\..\..\..\..\addons\ofxOsc\libs\oscpack\src\osc\OscHostEndianness.h" />
-		<ClInclude Include="..\..\..\..\..\addons\ofxOsc\libs\oscpack\src\osc\OscOutboundPacketStream.h" />
-		<ClInclude Include="..\..\..\..\..\addons\ofxOsc\libs\oscpack\src\osc\OscPacketListener.h" />
-		<ClInclude Include="..\..\..\..\..\addons\ofxOsc\libs\oscpack\src\osc\OscPrintReceivedElements.h" />
-		<ClInclude Include="..\..\..\..\..\addons\ofxOsc\libs\oscpack\src\osc\OscReceivedElements.h" />
-		<ClInclude Include="..\..\..\..\..\addons\ofxOsc\libs\oscpack\src\osc\OscTypes.h" />
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="$(OF_ROOT)\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">

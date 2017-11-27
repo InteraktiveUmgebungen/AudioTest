@@ -1,3 +1,2 @@
-ofxMSACore
-ofxMSAPhysics
+ofxBox2d
 ofxOsc

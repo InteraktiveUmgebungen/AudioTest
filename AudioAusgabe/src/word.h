@@ -4,28 +4,16 @@
 
 class Word {
 	private:
-		ofRectangle background;
 		string text;
-		vector<string> stringParts;
-		int textWidth;
-		int textHeight;
-		string key;
+		string buchstabe;
 
 	public:
 		Word(string s = "");
-		Word(string s, ofRectangle rect);
-		Word(string s, vector<string> stringParts, ofRectangle rect, int width, int height);
+		Word(string wort, string b);
 		~Word();
 
-		ofRectangle getBackground() const;
-		void setBackground(ofRectangle rect);
 		string getText() const;
-		vector<string> getStringParts() const;
-
-		int getTextWidth();
-		void setTextWidth(int w);
-		int getTextHeight() const;
-		void setTextHeight(int h);
+		string getBuchstabe() const;
 
 		friend std::ostream& operator<<(std::ostream& out, const Word &word);
 		friend bool operator==(const Word &word1, const Word &word2);

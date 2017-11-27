@@ -1,156 +1,131 @@
 ﻿#include "ofApp.h"
-#include "word.h"
-#include <random>
-#include "keyLocation.h"
-
-
-using namespace msa::physics;
-#define MIN_MASS				1
-#define MAX_MASS				3
-#define	GRAVITY					0
-#define SECTOR_COUNT			1		// currently there is a bug at sector borders, so setting this to 1
-
-
 
 //--------------------------------------------------------------
 void ofApp::setup(){
 	// load font at size 50
 	myFont.load("KeepCalm-Medium.ttf", 50, true, true);
 
-	windowResized(ofGetWidth(), ofGetHeight());
-
-	// define codeWord and save characters as keys
-	codeWord = "hello";
-	for (int i = 0; i < codeWord.length(); i++) {
-		keys.push_back(codeWord.substr(i, 1));
-	}
-
 	// for OSC connection with input
 	receiver.setup(PORT);
+
+	//Codewort in Array als einzelne buchstaben speichern
+	string input = ""; //hier könnte man auch das Codewort hardcoden
+	cout << "Please enter a Codeword:\n>";
+	getline(cin, input);
+	for (int i = 0; i < input.length(); i++) {
+		codeBuchstaben.insert(input.substr(i, 1));
+	}
+
+	// for visual output
+	ofBackgroundHex(0xfdefc2);
+	ofSetLogLevel(OF_LOG_NOTICE);
+	ofSetVerticalSync(true);
+	ofSetDrawBitmapMode(OF_BITMAPMODE_MODEL);
+	
+	myFontText.load("KeepCalm-Medium.ttf", 16, true, true);
+	myFontBuchstabe.load("GOUDYSTO.TTF", 16, true, true);
+
+	// Box2d
+	box2d.init();
+	box2d.setGravity(0, 0);
+	box2d.createBounds();
+	box2d.setFPS(60.0);
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-	width = ofGetWidth();
-	height = ofGetHeight();
-
-	// update the world
-	world->update();
-
+	string sentence = "";
 
 	// read OSC messages from input
 	while (receiver.hasWaitingMessages()) {
 		ofxOscMessage msg;
 		receiver.getNextMessage(msg);
 
-		cout << "New message: " << msg.getArgAsString(0) << endl;
-	}
+		sentence = msg.getArgAsString(0);
 
-
-	// read osc input --> TODO connect to audioInput project
-	string s1 = "so";
-	string s2 = "long";
-	string s3 = "and";
-	string s4 = "thanks";
-	string s5 = "for";
-	string s6 = "all";
-	string s7 = "the";
-	string s8 = "fish";
-	string s9 = "äöüumlß"; // TODO: äöüß not displayed in graphical output, strange output on console
-	string s10 = "don't";
-	string s11 = "panic";
-	// process strings: convert to upper-case and save in set
-	strings.insert(ofToUpper(s1));
-	strings.insert(ofToUpper(s2));
-	strings.insert(ofToUpper(s3));
-	strings.insert(ofToUpper(s4));
-	strings.insert(ofToUpper(s5));
-	strings.insert(ofToUpper(s6));
-	strings.insert(ofToUpper(s7));
-	strings.insert(ofToUpper(s8));
-	strings.insert(ofToUpper(s9));
-	strings.insert(ofToUpper(s10));
-	strings.insert(ofToUpper(s11));
-
-	int x = windowPadding;
-	int y = windowPadding;
-	// iterate through strings and convert to word objects
-	for (const string &s : strings) {
-		// get size of string
-		int stringWidth = (int)myFont.stringWidth(s);
-		int stringHeight = (int)myFont.stringHeight(s);
-		int rectWidth = stringWidth + 2 * padding;
-		int rectHeight = stringHeight + 2 * padding;
-
-		// create rectangle 
-		if (!((x + rectWidth) < (width - windowPadding))) {
-			x = windowPadding;
-			y = y + rectHeight + windowPadding;
+		if (sentence.begin() != sentence.end()) {
+			printf("sentence: ", sentence);
+			printf("msg: ", msg.getArgAsString(0));
 		}
-		ofRectangle background(x, y, rectWidth, rectHeight);
 
-		// define key in string for codeWord
-		vector<string> stringParts;
-		for (int i = 0; i < keys.size(); i++) {
-			if (s.find(keys[i]) != string::npos) {
-				vector<string> split = ofSplitString(s, keys[i]);
-				stringParts.push_back(split[0]);
-				stringParts.push_back(keys[i]);
-				stringParts.push_back(split[2]);
+		istringstream phrase(sentence);
+		string word;
+		//Satz in Wörter zerlegen und in set speichern
+		while (getline(phrase, word, ' ')) {
+			std::transform(word.begin(), word.end(), word.begin(), ::tolower);
+			wordsAsStrings.insert(word.c_str());
+		}
 
-				cout << "key found: " << keys[i] << endl; // TODO: not working!
+		//überprüfen ob Wörter nur Buchstaben enthalten
+		string zuUeberpruefen = "null";
+		for (std::set<std::string>::iterator it = wordsAsStrings.begin();
+			it != wordsAsStrings.end(); it++) {
+			zuUeberpruefen = *it;
 
-			}
-			else {
-				stringParts.push_back(s);
+			if (checkIfOnlyCharacters(zuUeberpruefen)) {
+				correctWords.insert(zuUeberpruefen);
 			}
 		}
 
-		// create word using string, rectangle and string dimensions
-		Word word(s, stringParts, background, stringWidth, stringHeight);
-		// add word to set with all words
-		words.insert(word);
+		set<string> gefundeneBuchstaben;
+		//codeBuchstaben durchiterieren
+		for (set<string>::iterator i = codeBuchstaben.begin();
+			i != codeBuchstaben.end(); i++) {
+			string buchstabe = *i;
+			string wort = "null";
+			string wortEnthaeltBuchstaben = "null";
+			//gesprochenen Wörter durchiterieren
+			for (std::set<std::string>::iterator it = correctWords.begin();
+				it != correctWords.end(); it++) {
+				wort = *it; //j-tes Wort aus dem gesprochenem Satz
+				if (wort.find_first_of(buchstabe) != std::string::npos) { //durchsucht das wort nach dem i-ten buchstaben aus dem CodeWort
+					Word* word = new Word(wort, buchstabe);
+					words.insert(*word);
 
-		x = x + rectWidth + windowPadding;
+					//--------------------------
+					// for visual output
+					/*
+					Bubble b;
+					b.setWord(*word);
+					b.setPhysics(1.0, 0.5, 0.3);
+					b.setup(box2d.getWorld(), 0, 0, ofRandom(20, 60)); // welchen wert für x und y? aktuell 0, 0
+					b.setVelocity(ofRandom(-30, 30), ofRandom(-30, 30));
+					allBubbles.push_back(b);*/
+					//---------------------------
+
+					wortEnthaeltBuchstaben = *it;
+					gefundeneBuchstaben.insert(buchstabe);
+					break; //jeder Buchstabe nur einmal
+				}
+			}
+			correctWords.erase(wortEnthaeltBuchstaben); //wort aus der Liste entfernen -> nicht mehrere Buchstaben pro Wort
+
+		}
+
+		//die buchstaben die gefunden wurden werden aus der codewortbuchstaben liste gelöscht
+		for (set<string>::iterator b = gefundeneBuchstaben.begin();
+			b != gefundeneBuchstaben.end(); b++) {
+			string gefunden = *b;
+			codeBuchstaben.erase(gefunden);
+		}
+
+
+		//wörter liste leeren und von vorne anfangen mit neuen Wörtern
+		wordsAsStrings.clear();
+		correctWords.clear();
 	}
 
-
-
-	// print out all words on console
-	/*for (const Word &word : words) {
-		cout << word <<endl;
-	}*/
-
-	// schlüsselwort definieren, nötige buchstaben aus strings von input raussuchen
-	// für jedes wort ein rechteck und einen string generieren --> string aufteilen in normalen und hervorgehobenen teil
-	// positionen der rechtecke zufällig bestimmen
-	// positionen über kollisionserkennung abstimmen --> überlappungsfrei
-	// aktuell gültige rechtecke und strings in set oder so speichern
+	// visual output
+	box2d.update();
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
 	// set oder so durchgehen und alle objekte zeichnen - für gehighliteten part des strings farbe wechseln
 
-	for (const Word &word : words) {
-		ofSetColor(0, 0, 0);
-		ofDrawRectangle(word.getBackground());
-		ofSetColor(255, 0, 0);
-		myFont.drawString(word.getText(), word.getBackground().getX() + padding, word.getBackground().getY() + word.getTextHeight() + padding);
+	for (int i = 0; i < allBubbles.size(); i++) {
+		allBubbles[i].get()->draw();
 	}
-
-	/*
-	ofEnableDepthTest(); // rendering happens according to z-depth rather than draw order
-	ofPushMatrix();
-	ofTranslate(width / 2, 0, -width / 3);	// center scene
-	ofPopMatrix();
-
-	ofSetColor(255, 0, 0);
-	ofDrawRectangle(10, 10, 100, 100);
-	ofSetColor(0, 0, 255);
-	ofDrawRectangle(10, 10, 100, 100);
-	ofSetColor(0, 0, 0); */
-	// --> über openGL zeichnen, damit collisions und gravity funktionieren
 }
 
 //--------------------------------------------------------------
@@ -187,7 +162,16 @@ void ofApp::mousePressed(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button){
-
+	//--------------------------
+	// for visual output
+	shared_ptr<Bubble> b = shared_ptr<Bubble>(new Bubble);
+	b.get()->setWord(Word("hello", "h"));
+	b.get()->setFonts(myFontText, myFontBuchstabe);
+	b.get()->setPhysics(1.0, 0.5, 0.3);
+	b.get()->setup(box2d.getWorld(), x, y, ofRandom(20, 60)); // welchen wert für x und y? 
+	b.get()->setVelocity(ofRandom(-30, 30), ofRandom(-30, 30));
+	allBubbles.push_back(b);
+	//---------------------------
 }
 
 //--------------------------------------------------------------
@@ -202,7 +186,6 @@ void ofApp::mouseExited(int x, int y){
 
 //--------------------------------------------------------------
 void ofApp::windowResized(int w, int h){
-	initScene();
 }
 
 //--------------------------------------------------------------
@@ -219,20 +202,15 @@ void ofApp::dragEvent(ofDragInfo dragInfo){
 // Additional functions
 //--------------------------------------------------------------
 
-
-void ofApp::initScene() {
-	width = ofGetWidth();
-	height = ofGetHeight();
-
-	// initialize our physics world
-	world = World2D::create();
-
-	world->setGravity(ofVec2f(0, GRAVITY));
-
-	// set world dimensions, not essential, but speeds up collision
-	world->setWorldSize(ofVec2f(-width / 2, -height), ofVec2f(width / 2, height));
-	world->setSectorCount(SECTOR_COUNT);
-	world->setDrag(0.97f);
-	world->setDrag(1);		// FIXTHIS
-	world->enableCollision();
+//überprüft die gesprochenen Wörter auf Buchstaben (sonderzeichen werden aussortiert)
+bool ofApp::checkIfOnlyCharacters(string wortZumUberpruefen)
+{
+	bool isOnlyCharacters = true;
+	for (int i = 0; i < wortZumUberpruefen.size(); i++) {
+		if (!isalpha(wortZumUberpruefen[i]) && !isspace(wortZumUberpruefen[i])) {
+			isOnlyCharacters = false;
+			break;
+		}
+	}
+	return isOnlyCharacters;
 }

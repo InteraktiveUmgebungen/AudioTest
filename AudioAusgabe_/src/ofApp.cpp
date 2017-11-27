@@ -1,17 +1,5 @@
 ﻿#include "ofApp.h"
 #include "word.h"
-#include <random>
-#include "MSAPhysics2D.h"
-#include "keyLocation.h"
-
-
-using namespace msa::physics;
-#define MIN_MASS				1
-#define MAX_MASS				3
-#define	GRAVITY					0
-#define SECTOR_COUNT			1		// currently there is a bug at sector borders, so setting this to 1
-
-
 
 //--------------------------------------------------------------
 void ofApp::setup(){
@@ -34,12 +22,6 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
-	width = ofGetWidth();
-	height = ofGetHeight();
-
-	// update the world
-	world->update();
-	
 
 	string sentence = "";
 	// read OSC messages from input
@@ -54,7 +36,6 @@ void ofApp::update(){
 
 	//cout << "New message: " << msg.getArgAsString(0) << endl;
 	
-
 	istringstream phrase(sentence); 
 	string word;
 	//Satz in Wörter zerlegen und in set speichern
@@ -175,7 +156,7 @@ void ofApp::mouseExited(int x, int y){
 
 //--------------------------------------------------------------
 void ofApp::windowResized(int w, int h){
-	initScene();
+
 }
 
 //--------------------------------------------------------------
@@ -191,26 +172,6 @@ void ofApp::dragEvent(ofDragInfo dragInfo){
 
 // Additional functions
 //--------------------------------------------------------------
-
-
-void ofApp::initScene() {
-	width = ofGetWidth();
-	height = ofGetHeight();
-
-	// initialize our physics world
-	world = World2D::create();
-
-	world->setGravity(ofVec2f(0, GRAVITY));
-
-	// set world dimensions, not essential, but speeds up collision
-	world->setWorldSize(ofVec2f(-width / 2, -height), ofVec2f(width / 2, height));
-	world->setSectorCount(SECTOR_COUNT);
-	world->setDrag(0.97f);
-	world->setDrag(1);		// FIXTHIS
-	world->enableCollision();
-}
-
-
 //überprüft die gesprochenen Wörter auf Buchstaben (sonderzeichen werden aussortiert)
 bool ofApp::checkIfOnlyCharacters(string wortZumUberpruefen)
 {
