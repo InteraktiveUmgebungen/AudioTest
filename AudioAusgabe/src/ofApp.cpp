@@ -22,8 +22,8 @@ void ofApp::setup(){
 	ofSetVerticalSync(true);
 	ofSetDrawBitmapMode(OF_BITMAPMODE_MODEL);
 	
-	myFontText.load("KeepCalm-Medium.ttf", 16, true, true);
-	myFontBuchstabe.load("GOUDYSTO.TTF", 16, true, true);
+	myFontText.load("../../assets/fonts/KeepCalm-Medium.ttf", 16, true, true);
+	myFontBuchstabe.load("../../assets/fonts/GOUDYSTO.TTF", 16, true, true);
 
 	// Box2d
 	box2d.init();
