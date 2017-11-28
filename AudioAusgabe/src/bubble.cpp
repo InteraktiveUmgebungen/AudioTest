@@ -11,7 +11,7 @@ void Bubble::draw() {
 		ofCircle(0, 0, radius);
 
 		ofPushMatrix();
-			ofSetColor(255);
+			ofSetColor(255, 255, 255);
 			myFontText.drawString(word.getText(), 0, 0);
 			myFontBuchstabe.drawString(word.getBuchstabe(), myFontText.stringWidth(word.getText()), 0);
 

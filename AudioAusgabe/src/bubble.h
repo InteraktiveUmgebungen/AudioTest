@@ -1,5 +1,5 @@
 #pragma once
-#include "C:\Users\Denise\Documents\ofx-workspace\of_v0.9.8_vs_release\addons\ofxBox2d\src\ofxBox2dCircle.h"
+#include "ofxBox2dCircle.h"
 #include "word.h"
 
 class Bubble :
