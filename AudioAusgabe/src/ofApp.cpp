@@ -39,13 +39,9 @@ void ofApp::update(){
 	// read OSC messages from input
 	while (receiver.hasWaitingMessages()) {
 		ofxOscMessage msg;
-		receiver.getNextMessage(msg);
 
-		sentence = msg.getArgAsString(0);
-
-		if (sentence.begin() != sentence.end()) {
-			printf("sentence: ", sentence);
-			printf("msg: ", msg.getArgAsString(0));
+		if (receiver.getNextMessage(msg)) {
+			sentence = msg.getArgAsString(0);
 		}
 
 		istringstream phrase(sentence);
@@ -53,7 +49,9 @@ void ofApp::update(){
 		//Satz in Wörter zerlegen und in set speichern
 		while (getline(phrase, word, ' ')) {
 			std::transform(word.begin(), word.end(), word.begin(), ::tolower);
-			wordsAsStrings.insert(word.c_str());
+			if (word.length() > 1) {
+				wordsAsStrings.insert(word.c_str());
+			}			
 		}
 
 		//überprüfen ob Wörter nur Buchstaben enthalten
